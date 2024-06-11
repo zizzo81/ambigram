@@ -1,18 +1,25 @@
 # Ambigram generator (fully customizable)
 
-This is an OpenSCAD script to generate two-sided 3D texts that merge, each text is visible from a different point of view.
+This is an [OpenSCAD](https://openscad.org/) script to generate two-sided 3D texts that merge, each text is visible from a different point of view.
 
-This script has been published and can be found on MakerWorld's [page](https://makerworld.com/en/models/489660).
-
-
-
-[TOC]
+This script has been published and can be found and used directly on [MakerWorld](https://makerworld.com/en)'s [page](https://makerworld.com/en/models/489660).
 
 ### Summary
 
-  - [A guide through the tabs of parameters](#a-guide-through-the-tabs-of-parameters)
+- [A guide through the tabs of parameters](#a-guide-through-the-tabs-of-parameters)
+  - [Texts](#texts)
+  - [Font](#font)
+  - [Base](#base)
+  - [Top](#top)
+  - [Tweaks (fix thing up)](#tweaks-fix-things-up)
 
+- [How to remove floating objects](#how-to-remove-floating-objects)
+- [How to use symbols in texts](#how-to-use-symbols-in-texts)
+  - [On Windows](#on-windows)
+  - [On macOS](#on-macos)
 
+- [Version history](#version-history)
+- [Thanks](#thanks)
 
 ## A guide through the tabs of parameters
 
@@ -22,7 +29,7 @@ Here's an detailed explanation of every possible setting. Feel free to explore t
 
 In this tab you can set the basic parameters about displayed texts.
 
-| Parameter            | Description                                                  | unit    | min  | man  | default     |
+| Parameter            | Description                                                  | unit    | min  | max  | default     |
 | -------------------- | ------------------------------------------------------------ | ------- | ---- | ---- | ----------- |
 | text_left            | This is the text which is visible:<br />- from left if *text_mode* is *Left-Right*;<br />- from the top in other modes. | text    |      |      | "SUSANNA"   |
 | text_right           | This is the text which is visible:<br />- from right if *text_mode* is *Left-Right*;<br />- from front in other modes. | text    |      |      | "CHRISTIAN" |
@@ -84,7 +91,7 @@ Some parameters that can help you fix things that come out weird.
 | curves_quality | Selects the quality of curves to be used when generating the model, the lowest the quality, the faster generation will take. You can work in Draft all the time for fast refresh, but you need to remember to switch back to Normal or something higher before exporting the model to be printed.<br /><br />Possible values:<br />- **Draft** - low quality, not suitable for printing;<br />- **Printable draft** - not for production, yet printable;<br />- **Normal**: normal quality, ready to print;<br />- **Good quality**: good quality for printing;<br />- **High quality**: very good quality for printing;<br />- **Very high quality**: good quality for high resolution printers.<br /><br />**Be warned:** Parametric Model Maker has a short timeout for script execution to avoid DDoS attacks, for this reason setting a quality too high could create a timeout error |      |      | Normal  |
 | font_ratio     | Since OpenSCAD does not provide functionalities to compute texts' widths and heights, calculus are approximated, with this parameter, which rappresents the ration between the height and the width of a single letter of the font used, you can correct those calculations. | 0.1  | 3    | 1.33    |
 
-### How to remove floating object when using 
+### How to remove floating objects
 
 As said before, complex texts and fonts with serifs tend to generate floating objects which will result in waste of material and time. This step by step guide will teach anyone, also with no experience of using [AutoDesk Fusion 360](https://www.autodesk.it/products/fusion-360) at all, to remove them from the resulting object.
 
