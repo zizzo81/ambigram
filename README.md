@@ -84,7 +84,7 @@ As said before, complex texts and fonts with serifs tend to generate floating ob
 
 First of all generate the desired design, you will notice some floating objects that are not connected to other object and not supported by material in any way.
 
-![Floating objects](.\Guide\floating_objects.png)
+![Floating objects](./Guide/floating_objects.png)
 
 Save the design as STL
 
