@@ -10,7 +10,7 @@ This script has been published and can be found on MakerWorld's [page](https://m
 
 ### Summary
 
-[A guide through the tabs of parameters]: #a-guide-through-the-tabs-of-parameters	"A guide through the tabs of parameters"
+[A guide through the tabs of parameters]:(#a-guide-through-the-tabs-of-parameters)
 
 
 
