@@ -8,6 +8,12 @@ This script has been published and can be found on MakerWorld's [page](https://m
 
 [TOC]
 
+### Summary
+
+[A guide through the tabs of parameters]: #a-guide-through-the-tabs-of-parameters	"A guide through the tabs of parameters"
+
+
+
 ## A guide through the tabs of parameters
 
 Here's an detailed explanation of every possible setting. Feel free to explore the endless possibilities of combining these values.
@@ -88,15 +94,15 @@ First of all generate the desired design, you will notice some floating objects 
 
 Save the design as STL
 
-If using MakerWorld's Parametric Model Maker, click on the ![Generate](.\Guide\generate_button.png) button to have the last modifications to the parameters be reflected on your model, then click on the ![Download](.\Guide\download_button.png) button.
+If using MakerWorld's Parametric Model Maker, click on the ![Generate](./Guide/generate_button.png) button to have the last modifications to the parameters be reflected on your model, then click on the ![Download](./Guide/download_button.png) button.
 
 When this popup shows up
 
-![Format selection window](.\Guide\download_selection.png)
+![Format selection window](./Guide/download_selection.png)
 
-Click on the ![Download STL](.\Guide\download_stl.png) button to download the STL version.
+Click on the ![Download STL](./Guide/download_stl.png) button to download the STL version.
 
-![Save file dialog](.\Guide\save_as.png)
+![Save file dialog](./Guide/save_as.png)
 
 If your computer offers the possibility to save the file to a desired location, select a folder where you want to save it and choose a proper name, e. g. “floating_objects”, which fill create “floating_objects.stl”.
 
@@ -104,21 +110,21 @@ If your browser is configured to automatically save files, you will find the fil
 
 Now open a new Fusion 360 project, and from the top toolbar, in SOLID tab, choose INSERT => Insert Mesh
 
-![Insert Mesh menu](.\Guide\insert_mesh_menu.png)
+![Insert Mesh menu](./Guide/insert_mesh_menu.png)
 
 When this popup window will appear, click on **Select from my computer…** button.
 
-![Select from my computer...](.\Guide\select_from_my_computer.png)
+![Select from my computer...](./Guide/select_from_my_computer.png)
 
 A file selection dialog will be shown, locate the freshly downloaded file and click on **Open**.
 
 The object will be placed in the center of the scene, just click on **OK**.
 
-![Insert mesh on scene](.\Guide\insert_mesh.png)
+![Insert mesh on scene](./Guide/insert_mesh.png)
 
 Now we need to convert this to an object body.
 
-![Mesh to object conversion](.\Guide\convert_mesh.png)
+![Mesh to object conversion](./Guide/convert_mesh.png)
 
 With the object selected, follow these steps:
 
@@ -133,52 +139,52 @@ Once finish, we need to disable the design history to be able to work on this fr
 
 Expand the **Bodies** group in the object browser by clicking on the left-pointing triangle on group name's left side.
 
-![Bodies in object browser](.\Guide\object_browser.png)
+![Bodies in object browser](./Guide/object_browser.png)
 
 In the object browser, right click on the top nome e. g. *(Unsaved)*, and from the popup menu that appears choose **Do not capture Design History**.
 
-![Do not capture Design History](.\Guide\design_history_menu.png)
+![Do not capture Design History](./Guide/design_history_menu.png)
 
 A confirmation dialog will appear, select **Continue** to stop capturing design history.
 
-![Disable design history](.\Guide\design_history.png)
+![Disable design history](./Guide/design_history.png)
 
 Now start selecting one by one the bodies, in the object browser's Bodies trunk.
 
-![Delete floating object](.\Guide\delete_floating_object.png)
+![Delete floating object](./Guide/delete_floating_object.png)
 
 The corresponding object will be blue highlighted on the screen, it this is a floating object, right click on his name in the object browser and select **Delete** from the popup menu that appeared.
 
-![Delete menu](.\Guide\delete_menu.png)
+![Delete menu](./Guide/delete_menu.png)
 
 **Important:** once you deleted all unwanted bodies (you should only have one object left), left click on the **Bodies** trunk in the object browser.
 
-![Select bodies group](.\Guide\select_bodies.png)
+![Select bodies group](./Guide/select_bodies.png)
 
 Now that we cleaned the object, we need to export the file back to STL.
 
-![Utilities - Make button](.\Guide\utilities_make.png)
+![Utilities - Make button](./Guide/utilities_make.png)
 
 Follow these steps:
 
 1. Select the **UTILITIES** tab in the top toolbar;
 2. Select the **MAKE** icon.
 
-![Utilities - Make - Ok](.\Guide\utilities_make_ok.png)
+![Utilities - Make - Ok](./Guide/utilities_make_ok.png)
 
 When in Make mode, the object will be light-blue highlighted, please ensure to select the **STL format** (binary is preferred, but not mandatory), then click on **OK**.
 
-![Save as](.\Guide\save_to_stl.png)
+![Save as](./Guide/save_to_stl.png)
 
 A dialog will popup, please be sure to check the **Save to my computer** option and select a valid folder, enter a name like cleaned_text, which will create cleaned_text.stl file, and finally click on **Save**.
 
 Open [Bambu Studio](https://bambulab.com/en/download/studio) or your preferred slicer, start a new project and drag the file onto it.
 
-![Drag STL over Bambu Studio](.\Guide\dragndrop.png)
+![Drag STL over Bambu Studio](./Guide/dragndrop.png)
 
 You will almost surely need to enable supports for printing this, so please be sure to be in the **Global** section, then go to the **Support** tab, activate **Enable support** and select *tree(auto)* as **Type** - I've got the most efficient and beautiful results using this.
 
-![Enable support](.\Guide\enable_support.png)
+![Enable support](./Guide/enable_support.png)
 
 ## How to use symbols in texts
 
@@ -188,7 +194,7 @@ If you want to use symbols in texts, you can with certain restrictions.
 
 From the start menu, open **Characters Map**.
 
-![Windows Characters Map](.\Guide\charmap.png)
+![Windows Characters Map](./Guide/charmap.png)
 
 Select from the combobox the font you're using in your design, then scroll through characters to find the glyph you want to use, click on it, and press the **Select** button, then use the **Copy** button to copy it to the clipboard, go to the Parametric Model Maker, focus the input field and paste from the clipboard.
 
@@ -198,11 +204,11 @@ Alternatively you can use [**Character Map UWP**](https://apps.microsoft.com/det
 
 On the Apple system you have a similar tool which is **Font Book**, open it from the Applications folder.
 
-![Font Book list](.\Guide\fontbook_list.png)
+![Font Book list](./Guide/fontbook_list.png)
 
 On startup you will be presented the full list of fonts installed on your system, search for the font you're using in the script and double click on it's icon to open up the font details.
 
-![Font Book detail](.\Guide\fontbook_detail.png)
+![Font Book detail](./Guide/fontbook_detail.png)
 
 Scroll through the glyphs to search the one you like most, then click it to open it up and use the **Copy** button in the lower-right corner to copy it to the clipboard. Paste it into the script's input field.
 
