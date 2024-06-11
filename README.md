@@ -223,7 +223,7 @@ Scroll through the glyphs to search the one you like most, then click it to open
 
 | Date       | Description                                                  |
 | ---------- | ------------------------------------------------------------ |
-| 2024-06-10 | - fix: uses baseline for text creation, this prevents letters like "J" (uppercase j) to break the design;<br />- fix: cuts out all that goes below the baseline, preventing floating letters;<br />- added selection of the shape mode between rectangle (legacy) and circle;<br />- added selection of the shape heart (sperimental);<br />- added top plate creation (request from a user). |
+| 2024-06-11 | - fix: uses baseline for text creation, this prevents letters like "J" (uppercase j) to break the design;<br />- fix: cuts out all that goes below the baseline, preventing floating letters;<br />- added selection of the shape mode between rectangle (legacy) and circle;<br />- added selection of the shape heart (sperimental);<br />- added top plate creation (request from a user). |
 | 2024-06-08 | First public release.                                        |
 
 ## Thanks
