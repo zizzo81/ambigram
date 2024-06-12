@@ -2,9 +2,11 @@
 
 This is an [OpenSCAD](https://openscad.org/) script to generate two-sided 3D texts that merge, each text is visible from a different point of view.
 
+This is a PDF version of the README.md file you can find [on original GitHub repository](https://github.com/zizzo81/ambigram).
+
 This script has been published and can be found and used directly on [MakerWorld](https://makerworld.com/en)'s [page](https://makerworld.com/en/models/489660).
 
-[![Download this guide as PDF](./Guide/download_pdf.png)](./Guide%20to%20ambigram%20generator.pdf) [![Published on MakerWorld](./Guide/maker_world.png)](https://makerworld.com/en/models/489660)
+[![Published on MakerWorld](./Guide/maker_world.png)](https://makerworld.com/en/models/489660)
 
 ### Summary
 
