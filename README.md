@@ -19,7 +19,8 @@ This script has been published and can be found and used directly on [MakerWorld
 - [How to use symbols in texts](#how-to-use-symbols-in-texts)
   - [On Windows](#on-windows)
   - [On macOS](#on-macos)
-
+  - [Using the available cheat sheets](#using#the#available#cheat#sheets)
+  
 - [Version history](#version-history)
 - [Thanks](#thanks)
 
@@ -31,14 +32,16 @@ Here's an detailed explanation of every possible setting. Feel free to explore t
 
 In this tab you can set the basic parameters about displayed texts.
 
-| Parameter            | Description                                                  | unit    | min  | max  | default     |
-| -------------------- | ------------------------------------------------------------ | ------- | ---- | ---- | ----------- |
-| text_left            | This is the text which is visible:<br />- from left if *text_mode* is *Left-Right*;<br />- from the top in other modes. | text    |      |      | "SUSANNA"   |
-| text_right           | This is the text which is visible:<br />- from right if *text_mode* is *Left-Right*;<br />- from front in other modes. | text    |      |      | "CHRISTIAN" |
-| text_mode            | This defines the mode of rendering of texts, this value can be:<br />- **Left-Right** - one text is visible from an angled left point of view, the other one is visible from an angled right point of view;<br />- **Front-Top** - one text is visible from the top of the object, the other one from the front;<br />- **45° front-Top** - one text is visible from the top of the object, the other one from a 45 degrees angled position between the top and the front. |         |      |      | Left-Right  |
-| text_angle           | This value, which is valid only in the *Left-Right* mode, allows you to set the angle from which the texts will be visible. | defrees | 0    | 180  | 45          |
-| text_shape           | This value can change the shape of the object, possible values are:<br />- **Rectangle** - the same as in original released version, seen from above the object is a rectangle or a rectangle with arrows:<br />- **Circle** - seen from above the object is a circle;<br />- **Heart** - seen from above the object is an heart (this feature is still sperimental). |         |      |      | Rectangle   |
-| text_heart_direction | Specifies where the pointing end of the heart is directed, this value can be:<br />- **Left** - the heart points in the same direction of the left text;<br />- **Right** - the heart points in the same direction of the right text;<br />- **Middle** - the heart points in the middle between the two texts. |         |      |      | Left        |
+| Parameter            | Description                                                  | unit    | min  | max  | default           |
+| -------------------- | ------------------------------------------------------------ | ------- | ---- | ---- | ----------------- |
+| text_left            | This is the text which is visible:<br />- from left if *text_mode* is *Left-Right*;<br />- from the top in other modes. | text    |      |      | "SUSANNA"         |
+| text_right           | This is the text which is visible:<br />- from right if *text_mode* is *Left-Right*;<br />- from front in other modes. | text    |      |      | "CHRISTIAN"       |
+| text_mode            | This defines the mode of rendering of texts, this value can be:<br />- **Left-Right** - one text is visible from an angled left point of view, the other one is visible from an angled right point of view;<br />- **Front-Top** - one text is visible from the top of the object, the other one from the front;<br />- **45° front-Top** - one text is visible from the top of the object, the other one from a 45 degrees angled position between the top and the front. |         |      |      | Left-Right        |
+| render_engine        | This enables user to choose which rendering engine to use with this script, providing some sort or retro-compatibility. This value can be:<br />- **v1.0 - legacy** - this uses the legacy rendering engine of version 1.0, which is know to have some limitations;<br />- **v2.0 - NEW! produces a cleaner object** - this value enables the use of new version 2.0 engine which renders better, creating cleaner objects, solving a lot of problems and being more precise with calculations, giving user new opportunities and features; |         |      |      | v2.0              |
+| text_angle           | This value, which is valid only in the *Left-Right* mode, allows you to set the angle from which the texts will be visible. | defrees | 0    | 180  | 45                |
+| text_shape           | This value can change the shape of the object, possible values are:<br />- **Rectangle** - the same as in original released version, seen from above the object is a rectangle or a rectangle with arrows:<br />- **Circle** - seen from above the object is a circle;<br />- **Heart** - seen from above the object is an heart;<br />- **Rounded rectangle** - a rectangle with rounded corners (only available when using new rendering engine). |         |      |      | Rounded rectangle |
+| text_roundness       | If *text_shape* is set as *Rounded rectangle*, this is the percentage of roundness to give to corners. A value of zero will create a pure rectangle. | %       | 0    | 100  | 50                |
+| text_heart_direction | Specifies where the pointing end of the heart is directed, this value can be:<br />- **Left** - the heart points in the same direction of the left text;<br />- **Right** - the heart points in the same direction of the right text;<br />- **Middle** - the heart points in the middle between the two texts. |         |      |      | Left              |
 
 ### Font
 
@@ -48,7 +51,7 @@ In this tab you can set all parameters about the font to be used for the texts.
 | ------------ | ------------------------------------------------------------ | ---- | ---- | ---- | ----------------- |
 | font_name    | Choose one of the supported fonts from the list to apply it to the text on this side.<br /><br />**Be warned!**<br />Complex fonts and fonts with serifs tend to generate floating objects which will result in waste of material and time. Consider using sans serif fonts and/or check my guide on how to easily get rid of floating objects using Fusion 360 down below. |      |      |      | Merriweather Sans |
 | font_custom  | Here you can override the above setting by putting the name of a font installed in the system where this script is executed. Please keep in mind that when you use Parametric Model Maker, the system the script is running on is MakerWorld's server, not your computer. |      |      |      | *empty*           |
-| font_style   | Choose the style of the text. **Note:** not all fonts support all styles. |      |      |      | Bold              |
+| font_style   | Choose the style of the text.<br />This can also be set to *None*, which will use font's default style.<br />**Note:** not all fonts support all styles. |      |      |      | Bold              |
 | font_size    | The size of the text, which will result in being also the depth of the object. | mm   | 1    | 72   | 20                |
 | font_spacing | Spacing between letters, the greater the number, the far the letters are. Better results are achieved when the letters touch one another, if they don't, a solid base will be required to keep them together. |      | 0.1  | 5    | 0.75              |
 
@@ -60,7 +63,7 @@ To keep the letters merge, you need to generate a base plate, these parameters a
 | -------------------- | ------------------------------------------------------------ | ---- | ---- | ---- | ------- |
 | base_type            | The type of base to be created, this value can be:<br />- **None** - no base is created at all;<br />- **Solid** - a solid base is created at bottom of object;<br />- **Text** - a top-text shaped base is being created at bottom of object, please note that this is mode not supported in *Left-Right* model mode and *Solid* will be used instead. |      |      |      | Text    |
 | base_height          | The height of the base.                                      | mm   | 0.2  | 25   | 3       |
-| base_x_correction    | Since OpenSCAD does not provide functionalities to compute texts' widths and heights, calculus about the base are approximated, with this parameter you can offset the base position on the X-axis to correct those calculus. | mm   | -100 | 100  | 6       |
+| base_x_correction    | Since OpenSCAD does not provide functionalities to compute texts' widths and heights, calculus about the base are approximated, with this parameter you can offset the base position on the X-axis to correct those calculus. | mm   | -100 | 100  | 0       |
 | base_y_correction    | Same as *base_x_correction*, but for the Y-axis.             | mm   | -100 | 100  | 0       |
 | base_z_correction    | Same as *base_x_correction*, but for the Z-axis.             | mm   | -100 | 100  | 0.4     |
 | base_size_correction | Same reason as for *base_x_correction*, this parameter allows you to shrink on enlarge the base size. | mm   | -100 | 100  | 0       |
@@ -76,7 +79,7 @@ Parameters that will create a top plate over the texts.
 | ------------------- | ------------------------------------------------------------ | ---- | ---- | ---- | ------- |
 | top_type            | The type of plate to be created, this value can be:<br />- **None** - no top plate is created at all:<br />- **Solid** - a solid plate is created at top of object:<br />- **Text** - a top-text shaped plate is being created at top of object, please note that this is mode not supported in *Left-Right* model mode and *Solid* will be used instead. |      |      |      | None    |
 | top_height          | The height of the top plate.                                 | mm   | 0.2  | 25   | 3       |
-| top_x_correction    | Since OpenSCAD does not provide functionalities to compute texts' widths and heights, calculus about the top plate are approximated, with this parameter you can offset the plate position on the X-axis to correct those calculus. | mm   | -100 | 100  | 6       |
+| top_x_correction    | Since OpenSCAD does not provide functionalities to compute texts' widths and heights, calculus about the top plate are approximated, with this parameter you can offset the plate position on the X-axis to correct those calculus. | mm   | -100 | 100  | 0       |
 | top_y_correction    | Same as *top_x_correction*, but for the Y-axis.              | mm   | -100 | 100  | 0       |
 | top_z_correction    | Same as *top_x_correction*, but for the Z-axis.              | mm   | -100 | 100  | 0.4     |
 | top_size_correction | Same reason as for *top_x_correction*, this parameter allows you to shrink on enlarge the top plate size. | mm   | -100 | 100  | 0       |
@@ -88,10 +91,13 @@ Parameters that will create a top plate over the texts.
 
 Some parameters that can help you fix things that come out weird.
 
-| Parameter      | Desccription                                                 | min  | max  | default |
-| -------------- | ------------------------------------------------------------ | ---- | ---- | ------- |
-| curves_quality | Selects the quality of curves to be used when generating the model, the lowest the quality, the faster generation will take. You can work in Draft all the time for fast refresh, but you need to remember to switch back to Normal or something higher before exporting the model to be printed.<br /><br />Possible values:<br />- **Draft** - low quality, not suitable for printing;<br />- **Printable draft** - not for production, yet printable;<br />- **Normal**: normal quality, ready to print;<br />- **Good quality**: good quality for printing;<br />- **High quality**: very good quality for printing;<br />- **Very high quality**: good quality for high resolution printers.<br /><br />**Be warned:** Parametric Model Maker has a short timeout for script execution to avoid DDoS attacks, for this reason setting a quality too high could create a timeout error |      |      | Normal  |
-| font_ratio     | Since OpenSCAD does not provide functionalities to compute texts' widths and heights, calculus are approximated, with this parameter, which rappresents the ration between the height and the width of a single letter of the font used, you can correct those calculations. | 0.1  | 3    | 1.33    |
+| Parameter              | Desccription                                                 | min  | max  | default         |
+| ---------------------- | ------------------------------------------------------------ | ---- | ---- | --------------- |
+| curves_quality         | Selects the quality of curves to be used when generating the model, the lowest the quality, the faster generation will take. You can work in Draft all the time for fast refresh, but you need to remember to switch back to Normal or something higher before exporting the model to be printed.<br /><br />Possible values:<br />- **Draft** - low quality, not suitable for printing;<br />- **Printable draft** - not for production, yet printable;<br />- **Normal**: normal quality, ready to print;<br />- **Good quality**: good quality for printing;<br />- **High quality**: very good quality for printing;<br />- **Very high quality**: good quality for high resolution printers.<br /><br />**Be warned:** Parametric Model Maker has a short timeout for script execution to avoid DDoS attacks, for this reason setting a quality too high could create a timeout error |      |      | Normal          |
+| font_ratio             | Since OpenSCAD does not provide functionalities to compute texts' widths and heights, calculus are approximated, with this parameter, which rappresents the ration between the height and the width of a single letter of the font used, you can correct those calculations. | 0.1  | 3    | 1.33            |
+| small_characters       | This is the list of the characters that will be considered small and will have a smaller depth (see *small_characters_ratio*). |      |      | "!()1I[]fijlt{" |
+| small_characters_ratio | This is the ratio between the depth of a normal character and the depth of a character considered small. | 0.01 | 3    | 0.3             |
+| space_ratio            | This is the ratio between the depth of a normal character and the depth of a rectangle created in place of a white space. | 0.01 | 3    | 0.1             |
 
 ### How to remove floating objects
 
@@ -207,7 +213,15 @@ From the start menu, open **Characters Map**.
 
 Select from the combobox the font you're using in your design, then scroll through characters to find the glyph you want to use, click on it, and press the **Select** button, then use the **Copy** button to copy it to the clipboard, go to the Parametric Model Maker, focus the input field and paste from the clipboard.
 
-Alternatively you can use [**Character Map UWP**](https://apps.microsoft.com/detail/9wzdncrdxf41), select the font you're using from the left list, scroll through the glyphs to search the one you like most, then click it to focus it. Use the **Copy** button in the lower-right corner to copy it to the clipboard.
+Optionally you can copy the character code in the lower left corner and insert its hexadecimal value in the text field pre-pending the "\u" escape character sequence, e. g. : U+2665 becomes \u2665
+
+Alternatively you can use [**Character Map UWP**](https://apps.microsoft.com/detail/9wzdncrdxf41)
+
+![UWP Characters Map](./Guide/charmap_uwp.png)
+
+Select the font you're using from the left list, scroll through the glyphs to search the one you like most, then click it to focus it. Use the **Copy** button in the lower-right corner to copy it to the clipboard.
+
+Optionally you can copy the character code in the lower right corner and insert its hexadecimal value in the text field pre-pending the "\u" escape character sequence, e. g. : U+263B becomes \u263B
 
 ### On macOS
 
@@ -221,11 +235,26 @@ On startup you will be presented the full list of fonts installed on your system
 
 Scroll through the glyphs to search the one you like most, then click it to open it up and use the **Copy** button in the lower-right corner to copy it to the clipboard. Paste it into the script's input field.
 
+Optionally you can copy the character code in the lower left corner and insert its hexadecimal value in the text field pre-pending the "\u" escape character sequence, e. g. : U+263C becomes \u263C.
+
+### Using the available cheat sheets
+
+I made some cheat sheets, due to limitations of upload size and count to MakerWorld I only uploaded the index there, you will find all the font-specific files in the [Fonts cheat sheet folder](https://github.com/zizzo81/ambigram/tree/main/Fonts cheat sheet) here on GitHub.
+
+![Cheat sheet index](./Guide/cheat_sheet_index.png)
+
+Open up the [Fonts cheat sheet.pdf](https://github.com/zizzo81/ambigram/blob/main/Fonts cheat sheet/Fonts cheat sheet.pdf) file and click the font you're using, you will be brought to the PDF file containing the cheat sheet for that font.
+
+![Cheat sheet for Noto Sans](./Guide/cheat_sheet.png)
+
+Scroll through the pages and search the glyph you're looking for, copy the code below it and paste it into the input fields.
+
 ## Version history
 
 | Date       | Description                                                  |
 | ---------- | ------------------------------------------------------------ |
-| 2024-06-11 | - fix: uses baseline for text creation, this prevents letters like "J" (uppercase j) to break the design;<br />- fix: cuts out all that goes below the baseline, preventing floating letters;<br />- added selection of the shape mode between rectangle (legacy) and circle;<br />- added selection of the shape heart (sperimental);<br />- added top plate creation (request from a user). |
+| 2024-06-16 | - a completely new rendering engine has been introduced, this engine creates cleaner objects, solves a lot of problems, is more precise with calculations and gives new opportunities for new features;<br />- fix: when text_left was longer than text_right, the font was cut in half vertically;<br />- fix: top was positioned a lot above the end of the object;<br />- other minor fixes that prevented the script running as intended;<br />- feature: new rendering engine allows to create rounded rectangle base and top plate;<br />- feature: escaping of texts allows to specify ASCII and UNICODE characters;<br />- improvement: heart shape is not considered experimental anymore, since with new rendering engine it's almost perfect;<br />- improvement: font_style has a new possible value of "None";<br />- the new rendering engine has been set as default, but you can switch back to the legacy one by setting the render_engine parameter;<br />- improvement: since rendering engine is default and more precise with calculations, correction offsets and parameters have been zeroed, still available because you can still switch to the legacy engine;<br />- improvement: small characters can be defined and they will be rendered with a specific ratio in depth (only with new rendering engine);<br />- improvement: spaces will be rendered as a very thin shape so corresponding letter can be seen (only with new rendering engine);<br />- improvement: for texts that have different lengths, trailing and leading spaces will be equally added to match the length (only with new rendering engine);<br />- a new PDF called "Fonts cheat sheet.pdf" including all standard fonts with all their glyphs has been added. |
+| 2024-06-11 | - fix: uses baseline for text creation, this prevents letters like "J" (uppercase j) to break the design;<br />- fix: cuts out all that goes below the baseline, preventing floating letters;<br />- added selection of the shape mode between rectangle (legacy) and circle;<br />- added selection of the shape heart (experimental);<br />- added top plate creation (request from a user). |
 | 2024-06-08 | First public release.                                        |
 
 ## Thanks
